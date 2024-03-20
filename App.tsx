@@ -11,6 +11,17 @@ import {
   View,
 } from "react-native";
 
+const styles = StyleSheet.create({
+  container: {
+    marginTop: "50%",
+    paddingHorizontal: 24,
+  },
+  safeAreaView: {
+    flex: 1,
+    backgroundColor: "black",
+  },
+});
+
 export default function App() {
   const [fontsLoaded] = useFonts({ Poppins_600SemiBold, Poppins_500Medium });
 
@@ -23,14 +34,3 @@ export default function App() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop: "50%",
-    paddingHorizontal: 24,
-  },
-  safeAreaView: {
-    flex: 1,
-    backgroundColor: "black",
-  },
-});
