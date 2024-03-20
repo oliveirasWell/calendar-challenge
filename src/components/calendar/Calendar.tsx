@@ -41,9 +41,6 @@ const Calendar = ({ accentColor = theme.colors.turquoise }: CalendarProps) => {
     handleNextMonth,
   } = useCalendarFunctions();
 
-  console.log("accentColor", accentColor);
-  console.log("theme.colors.turquoise", theme.colors.turquoise);
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Calendar</Text>
