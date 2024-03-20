@@ -17,3 +17,15 @@ npm run ios
 ```
 npm run android
 ```
+
+
+## Calendar component
+
+At `src/components/calendar/Calendar.tsx` the component is exported
+It has the follow property
+
+```
+    accentColor: string
+```
+
+Default color is "#00A19B" 

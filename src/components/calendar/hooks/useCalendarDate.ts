@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
 
-import { getLastXDayOfLastMonth, splitIntoChunks } from "./utils";
+import { getLastXDayOfLastMonth, splitIntoChunks } from "../utils";
 
-export const useCalendarDate = () => {
+export const useCalendarFunctions = () => {
   const [date, setDate] = useState(new Date());
 
   const month = useMemo(
@@ -24,7 +24,7 @@ export const useCalendarDate = () => {
     const missingDaysAtStart =
       firstDayOfMonthIndex === 0 ? 6 : firstDayOfMonthIndex;
     const missingDaysAtEnd =
-      lastDayOfMonthIndex === 0 ? 6 : 7 - lastDayOfMonthIndex;
+      lastDayOfMonthIndex === 0 ? 7 : 7 - lastDayOfMonthIndex;
 
     const listOfDays = [];
 

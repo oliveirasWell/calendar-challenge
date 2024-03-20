@@ -13,18 +13,13 @@ export function splitIntoChunks(array: Date[], chunkSize: number) {
   return result;
 }
 export function getWeekNumber(date: Date) {
-  // Copy the date so the original date won't be modified
   const tempDate = new Date(date.valueOf());
 
-  // Set the date to Thursday in the current week since the ISO week starts with Monday
-  // and Thursday is always in the year that is considered the ISO week year
   tempDate.setHours(0, 0, 0, 0);
   tempDate.setDate(tempDate.getDate() + 3 - ((tempDate.getDay() + 6) % 7));
 
-  // Calculate the first Thursday of the year
   const firstThursday = new Date(tempDate.getFullYear(), 0, 4);
 
-  // Set the first Thursday in the ISO week definition
   firstThursday.setDate(
     firstThursday.getDate() + 3 - ((firstThursday.getDay() + 6) % 7),
   );

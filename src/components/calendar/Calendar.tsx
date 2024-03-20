@@ -1,10 +1,36 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
+import { theme } from "src/theme/theme";
 
-import { CalendarHeader } from "./CalendarHeader";
-import { CalendarView } from "./CalendarView";
-import { useCalendarDate } from "./useCalendarDate";
+import { CalendarHeader } from "./components/CalendarHeader";
+import { CalendarBody } from "./components/CalendarBody";
+import { useCalendarFunctions } from "./hooks/useCalendarDate";
 
-const Calendar = () => {
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "column",
+  },
+  title: {
+    fontSize: 32,
+    color: "white",
+    fontFamily: "Poppins_600SemiBold",
+    lineHeight: 48,
+    marginBottom: 16,
+  },
+  calendarContainer: {
+    flexGrow: 1,
+    backgroundColor: theme.colors.deepBlack,
+    borderWidth: 1,
+    borderColor: theme.colors.lightGray,
+    borderRadius: 7,
+    padding: 12,
+  },
+});
+
+interface CalendarProps {
+  accentColor?: string;
+}
+
+const Calendar = ({ accentColor = theme.colors.turquoise }: CalendarProps) => {
   const {
     date,
     setDate,
@@ -13,36 +39,19 @@ const Calendar = () => {
     year,
     handlePrevMonth,
     handleNextMonth,
-  } = useCalendarDate();
+  } = useCalendarFunctions();
+
+  console.log("accentColor", accentColor);
+  console.log("theme.colors.turquoise", theme.colors.turquoise);
 
   return (
-    <View style={{ flexDirection: "column" }}>
-      <Text
-        style={{
-          fontSize: 32,
-          color: "white",
-          fontFamily: "Poppins_600SemiBold",
-          lineHeight: 48,
-          marginBottom: 16,
-        }}
-      >
-        Calendar
-      </Text>
-
-      <View
-        style={{
-          flexGrow: 1,
-          backgroundColor: "#131313",
-          borderWidth: 1,
-          borderColor: "#B7B7B7",
-          borderRadius: 7,
-          padding: 12,
-        }}
-      >
+    <View style={styles.container}>
+      <Text style={styles.title}>Calendar</Text>
+      <View style={styles.calendarContainer}>
         <CalendarHeader
           {...{ year, month, handlePrevMonth, handleNextMonth }}
         />
-        <CalendarView {...{ weeks, date, setDate }} />
+        <CalendarBody {...{ weeks, date, setDate, accentColor }} />
       </View>
     </View>
   );
