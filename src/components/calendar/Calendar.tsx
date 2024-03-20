@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet } from "react-native";
-import { theme } from "src/theme/theme";
 
-import { CalendarHeader } from "./components/CalendarHeader";
 import { CalendarBody } from "./components/CalendarBody";
+import { CalendarHeader } from "./components/CalendarHeader";
 import { useCalendarFunctions } from "./hooks/useCalendarDate";
+import { theme } from "../../theme/theme";
 
 const styles = StyleSheet.create({
   container: {

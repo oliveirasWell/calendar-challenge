@@ -1,8 +1,8 @@
 import { memo } from "react";
 import { View, Text, TouchableWithoutFeedback, StyleSheet } from "react-native";
-import { theme } from "src/theme/theme";
 
 import { DayOfWeekProps } from "./DayOfWeekProps";
+import { theme } from "../../../theme/theme";
 
 const dayOfWeekStyles = StyleSheet.create({
   dayText: {

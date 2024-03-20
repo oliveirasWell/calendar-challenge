@@ -1,4 +1,3 @@
-
 export interface DayOfWeekProps {
   day: Date;
   date: Date;

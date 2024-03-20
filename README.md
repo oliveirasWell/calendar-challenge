@@ -1,5 +1,12 @@
 # Calendar Component code challenge
 
+## Setup
+
+For environment setup see the react native web (documentation)[https://reactnative.dev/docs/environment-setup]   
+
+```
+npm install
+```
 
 #Running the Project
 To start the Expo development server:
@@ -29,3 +36,16 @@ It has the follow property
 ```
 
 Default color is "#00A19B" 
+
+
+## Lint 
+
+```
+npm run lint
+```
+
+# Testing
+
+```
+npm run testing
+```
